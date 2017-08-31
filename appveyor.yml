@@ -9,6 +9,9 @@ clone_folder: c:\projects\gameboycore
 
 environment:
   GTEST_ROOT: c:\libs\googletest
+  
+configuration:
+  - Release
 
 install:
   - echo "Installing Google Test"
@@ -30,7 +33,7 @@ build:
   verbosity: minimal
 
 after_build:
-  - C:\projects\gameboycore\build\tests\Debug\gameboy_tests.exe
+  - C:\projects\gameboycore\build\tests\Release\gameboy_tests.exe
   - msbuild C:\projects\gameboycore\build\PACKAGE.vcxproj /verbosity:quiet
 
 artifacts:
